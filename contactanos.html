@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contactanos</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h4>B O R E A L - T U R I S M O</h4>
+
+    <img src="img/logo.jpg" alt="" style="padding-top: 0.5%" width="100%" height="100%" text-align="center">
+    
+    
+                		<!-- NavBar -->			
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"style="color:black; background-color: white;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>         
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02"style="color:black; background-color: white;">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+
+                 <!-- Navbar para todas las páginas -->
+
+                <li class="nav-item active">
+                  <a class="nav-link" style="color:black" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link"  style="color:black"  href="equipo.html">¿Quiénes somos? <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" style="color:black"   href="servicio.html">Nuestros servicios <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" style="color:black"   href="clima.html">Consulta el Clima <span class="sr-only">(current)</span></a>
+                  </li>
+				  <li class="nav-item active">
+                    <a class="nav-link" style="color:black"   href="contactanos.html">Contáctanos <span class="sr-only">(current)</span></a>
+                  </li>				  
+              </ul>
+            </div>
+          </nav>
+
+
+          <header class="header">
+       
+          <div class="header-content container">
+              <div class="header-txt">
+                  
+                  <h1><br><span>Bienvenidos a Boreal Turismo</span> <br> Descubre la magia del sur.</h1>
+              </div>
+  
+          </div>
+  
+      </header>
+
+         
+    <!-- Formulario para contactar -->
+
+    <br><br> 
+    <header class="container1">
+       
+        <div class="container1-content container">
+            <div class="container1-txt">
+
+            <h2 style="padding:1%" >C O N T A C T A N O S </h2>
+            <p style="padding: 1%;">Para servicio al cliente y consultas generales, contáctenos en el formulario a continuación. Uno de los miembros de nuestro equipo se pondrá en contacto contigo lo más pronto posible.</p>
+            <form class="needs-validation" novalidate style="padding: 1%;">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip01">Nombre:</label>
+                  <input type="text" class="form-control" id="validationTooltip01" value="Juan" required>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip02">Apellido:</label>
+                  <input type="text" class="form-control" id="validationTooltip02" value="Pérez" required>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip03">Ciudad:</label>
+                  <input type="text" class="form-control" id="validationTooltip03" required>
+                  <div class="invalid-tooltip">
+                    Por favor, ingresa una ciudad válida.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationTooltip05">Télefono:</label>
+                  <input type="text" class="form-control" id="validationTooltip05" required>
+                  <div class="invalid-tooltip">
+                    Por favor, ingresa una número válido.
+                  </div>
+                </div>                
+              </div>
+              <p id="demo"></p>  
+              <button class="btn btn-primary" type="submit"  onclick='document.getElementById("demo"), alert("Envío exitoso!")= ""'>Enviar</button>
+            </form>
+    <!-- Formulario para escribir a la galeria -->
+    <br><br>
+    <br><br>
+
+    <h2 style="padding: 1%;" >E S C R I B E N O S </h2>
+            <form class="was-validated" style="padding: 1%;" >
+              <div class="mb-3">
+                <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Por favor, escribe tu mensaje." required></textarea>
+    <!-- esto es para java en el boton-->
+    <p id="demo"></p>
+    <button class="btn btn-primary" type="submit" onclick='document.getElementById("demo"), alert("Envío exitoso!")= ""'>Enviar</button>         
+     </div>
+           </form>
+
+
+    <!-- Fromulario para registrarte en la pagina -->
+    <br><br>
+    <br><br>
+    <h2 style="padding: 1%;">R E G I S T R A T E</h2>
+    <form><div class="form-group row" style="padding: 1%;">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value= "email@example.com" style="color:black; background-color: white;">
+                  </div>
+                </div>
+                <div class="form-group row" style="padding: 1%;">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña:</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword">
+                  </div>
+                                  <!-- BOTEN EMERGENTE DE "REGISTRATE" -->
+              </div> 
+              <p id="demo"></p>
+  
+              <button class="btn btn-primary" type="submit"  onclick='document.getElementById("demo"), alert("Envío exitoso!")= ""'>Enviar</button>
+            </form>
+        </div>                
+    </div>
+        </header>
+          <br>
+
+          <br><br>
+          <header class="header">
+                     
+              <div class="header-content container">
+                  <div class="header-txt">
+          <p style="padding: 1%;"> Si tienes dudas, puedes llamar o enviarnos un WhatsApp al +569 11133355 </p> 
+          </header>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Boreal Turismo</h3>
+                <div class="descarga">
+                    <img src="img/logo.jpeg" alt="">
+
+                </div>                
+            </div>
+
+            <div class="link">
+                <h3>Boreal.turismo@gmail.com</h3>
+                <ul>
+                    <li><a href="#">+569 11133355</a></li>
+                    <li><a href="#">Temuco, Chile.</a></li>
+            </div>
+
+        </div>
+
+    </footer>
+
+		<!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    
+
+</body>
+</html>
