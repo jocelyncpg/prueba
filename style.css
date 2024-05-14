@@ -245,10 +245,14 @@ th, td{
 }
 
 h4{
+    position:static;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     font-size: 55px;
-    line-height: 65px;
+    line-height: 1em;
     color: #227c37;
-    margin-bottom: 35px;
+    margin: 35px auto;
     text-align: center;
     padding:  15px;
     border-radius: 32px;
