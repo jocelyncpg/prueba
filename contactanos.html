@@ -14,7 +14,150 @@
 
 </head>
 <body>
+  <style>
+    :root {
+        --colorTextos: #49454567;
+    }
+    
+    
+    *,
+    ::before,
+    ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
 
+    
+    form{
+        background: #fff;
+        padding: 40px 0;
+        box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+    }
+    
+    .form{
+        width: 100%;
+        margin: auto;
+    }
+    
+    form .grupo{
+        position: relative;
+        margin: 45px ;
+    }
+    
+    input{
+        background: none;
+        color: #c6c6c6;
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--colorTextos);
+    }
+    
+    
+    
+    input:focus{ 
+        outline: none;
+        color: #5e5d5d;
+    }
+    
+    label{
+        color: var(--colorTextos);
+        font-size: 16px;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        transition: 0.5s ease all;
+        pointer-events: none;
+    }
+    
+    input:focus~label,
+    input:valid~label{
+        top: -14px;
+        font-size: 12px;
+        color: #2196f3;
+    }
+    
+    .barra{
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .barra::before{
+        content: "";
+        height: 2px;
+        width: 0%;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(to right, #B06AB3, #4568DC);
+        transition: 0.3s ease width;
+        left: 0;
+    }
+    
+    input:focus~.barra::before{
+        width: 100%;
+    }
+    
+    .warnings{
+        width: 200px;
+        text-align: center;
+        margin: auto;
+        color: red;
+        font-size: 25px;
+        padding-top: 20px;
+    }
+    
+    button{
+        background-color: #35974a;
+        border: none;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        color: #fff;
+        height: 40px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    @media screen and (max-width:500px){
+        form{
+            width: 80%;
+        }
+    }
+    
+    
+</style>
+
+
+<script >
+    let regex = /forma/ 
+    let str = "forma alguna forma de hacer esto "
+    imprimir(str,regex);
+    // Encontrará en este caso si hay una coincidencia en el texto con la palabra /forma/
+
+
+    regex = /[ia]/
+    //Al poner corchetes buscará si hay o no una de esas coincidencias
+    //En este caso buscará la letra "i" o letra "a" y si no está
+    //Devolverá false y Null en el caso de Match
+    //También se pueden usar rangos y numeros como /[0-3]/ encontrará los numeros del 0 al 3
+
+    str = "Como estuvo?"
+    imprimir(str, regex)
+
+    
+    
+
+    function imprimir (str,regex){
+        console.log(regex.test(str))
+        console.log(str.match(regex))
+    }
+</script>
   <div class="card card-titulo">
     <h4 class="card-titulo">B O R E A L - T U R I S M O</h4>
   </div>
@@ -75,7 +218,7 @@
         <div class="container1-content container">
             <div class="container1-txt">
 
-            <h1 style="padding:1%" >C O N T A C T A N O S </h1>
+              <h1 style="padding: 1%;" >E S C R I B E N O S </h1>
             <p style="padding: 1%;">Para servicio al cliente y consultas generales, contáctenos en el formulario a continuación. Uno de los miembros de nuestro equipo se pondrá en contacto contigo lo más pronto posible.</p>
             <form class="needs-validation" novalidate style="padding: 1%;">
               <div class="form-row">
@@ -110,14 +253,7 @@
                   </div>
                 </div>                
               </div>
-              <p id="demo"></p>  
-              <button class="btn btn-primary" type="submit"  onclick='document.getElementById("demo"), alert("Envío exitoso!")= ""'>Enviar</button>
-            </form>
-    <!-- Formulario para escribir a la galeria -->
-    <br><br>
-    <br><br>
-
-    <h1 style="padding: 1%;" >E S C R I B E N O S </h1>
+    <br>
             <form class="was-validated" style="padding: 1%;" >
               <div class="mb-3">
                 <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Por favor, escribe tu mensaje." required></textarea>
@@ -127,28 +263,54 @@
      </div>
            </form>
 
+           <form action="" method="POST" id="form">
+            <div class="form">
+                <h1 style="padding: 1%;" >E S C R I B E N O S </h1>
+                <div class="grupo">
+                    <input type="text" name="" id="name" ><span class="barra"></span>
+                    <label for="">Nombre</label>
+                </div>
+                <div class="grupo">
+                    <input type="email" name="" id="email" ><span class="barra"></span>
+                    <label for="">Email</label>
+                </div>
+                <div class="grupo">
+                    <input type="password" name="" id="password" ><span class="barra"></span>
+                    <label for="">Password</label>
+                </div>
+                
+                <button type="submit">REGISTRATE</button>
+                <p class="warnings" id="warnings"></p>
+            </div>
+        </form>
 
     <!-- Fromulario para registrarte en la pagina -->
     <br><br>
     <br><br>
-    <h1 style="padding: 1%;">R E G I S T R A T E</h1>
-    <form><div class="form-group row" style="padding: 1%;">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
-                  <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value= "email@example.com" style="color:black; background-color: white;">
+            <form action="" method="POST" id="form">
+              <div class="form">
+                  <h1 style="padding: 1%;" >E S C R I B E N O S </h1>
+                  <div class="grupo">
+                      <input type="text" name="" id="name" ><span class="barra"></span>
+                      <label for="">Nombre</label>
                   </div>
-                </div>
-                <div class="form-group row" style="padding: 1%;">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña:</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
+                  <div class="grupo">
+                      <input type="email" name="" id="email" ><span class="barra"></span>
+                      <label for="">apellido</label>
                   </div>
-                                  <!-- BOTEN EMERGENTE DE "REGISTRATE" -->
-              </div> 
-              <p id="demo"></p>
-  
-              <button class="btn btn-primary" type="submit"  onclick='document.getElementById("demo"), alert("Envío exitoso!")= ""'>Enviar</button>
-            </form>
+                  <div class="grupo">
+                      <input type="password" name="" id="password" ><span class="barra"></span>
+                      <label for="">Ciudad</label>
+                  </div>
+                  
+                  <button type="submit">REGISTRATE</button>
+                  <p class="warnings" id="warnings"></p>
+              </div>
+          </form>
+      
+          <script src="app.js"></script>
+
+
         </div>                
     </div>
         </header>
@@ -184,15 +346,6 @@
         </div>
 
     </footer>
-
-		<!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
     
 
 </body>
