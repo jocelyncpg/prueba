@@ -4,10 +4,8 @@ const email = document.getElementById("email")
 const pass = document.getElementById("password")
 const form = document.getElementById("form")
 const parrafo = document.getElementById("warnings")
-const apellido = document.getElementById("apellido")
-const ciudad = document.getElementById("ciudad")
-const telefono = document.getElementById("telefono")
-const escritura = document.getElementById("escritura")
+
+
 
 form.addEventListener("submit", e=>{
     e.preventDefault()
@@ -27,12 +25,17 @@ form.addEventListener("submit", e=>{
         warnings += `La contraseña no es valida <br>`
         entrar = true
     }
-
     if(entrar){
         parrafo.innerHTML = warnings
     }else{
-        parrafo.innerHTML = "Enviado"
+        parrafo.innerHTML = "Enviado con éxito!"
     }
 })
 
 
+
+
+
+
+
+    
