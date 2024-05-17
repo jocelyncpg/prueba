@@ -67,7 +67,11 @@
 
  <style>
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+
+
+   
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css);
 
 
@@ -75,7 +79,12 @@
 	width: 400px;
 	margin: 100px auto;
 }
-
+.weatherCard{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+}
 .currentTemp{
 	width: 220px;
 	height: 200px;
@@ -163,17 +172,6 @@
 </head>
 <body>
 
-<br><br><br>
-<div class="card card-titulo">
-    <h4 class="card-titulo">P U E R T O - V A R A S </h4>
-  </div>
-  
-<header class="header">
-    <div class="header-content container">
-        <div class="header-txt">
-<p> Revisa el cima para Puerto Varas para los próximos días.</p>
-</header>
-
     <div class="container">
         <div id="row">
             <div id="temperaturas"></div>
@@ -182,30 +180,35 @@
     </div>
     <div id="temperaturas"></div>
 
-    <script>
-        
 
-        const settings = {
-            async: true,
-            crossDomain: true,
-            url: 'https://open-weather13.p.rapidapi.com/city/puerto-varas/EN',
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '6b4c4ab4demsh8d7696d679eeee7p17fd14jsn55e1c0ae2ccc',
-                'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
-            }
-        };
+    		<!-- Scripts -->
+	
+			<script src="script.js"></script>
+
+            <script>
+        
+               
+            const settings = {
+                async: true,
+                crossDomain: true,
+                url: 'https://yahoo-weather5.p.rapidapi.com/weather?location=puerto-varas&format=json&u=f',
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '833f52f1dfmsh85b64cc12871cecp1ca787jsnc12f5afa97c2',
+                    'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
+                }
+            };
+            
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
         
         $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
-        
-        $.ajax(settings).done(function (response) {
-            // Crear un objeto para almacenar las temperaturas de los próximos días
+            // Crear un objeto para almacenar las temperaturas de los próximos 7 días
             var temperaturas = {};
         
-            // Iterar sobre los pronósticos de los próximos días
-            for (var i = 0; i < 10; i++) {
+            // Iterar sobre los pronósticos de los próximos 7 días
+            for (var i = 0; i < 7; i++) {
                 var dia = response.forecasts[i].day; // Obtener el día de la semana
                 var temperaturaMax = response.forecasts[i].high; // Obtener la temperatura máxima
                 var temperaturaMin = response.forecasts[i].low; // Obtener la temperatura mínima
